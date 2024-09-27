@@ -29,7 +29,7 @@ public class MZMod {
         final var player = event.getPlayer();
         final var message = event.getMessage();
         event.setCanceled(true);
-        player.level().players().forEach(p -> player.sendSystemMessage(player.getDisplayName().copy().append(Component.literal(" : ")).append(message)));
+        player.level().players().forEach(p -> p.sendSystemMessage(player.getDisplayName().copy().append(Component.literal(" : ")).append(message)));
     }
 
     @SubscribeEvent
