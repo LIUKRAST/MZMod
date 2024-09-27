@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.frozenblock.mz_informatica.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "mz_informatica.refmap.json",
+  "mixins": [],
+  "client": [
+    "PlayerTabOverlayMixin"
+  ],
+  "server": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
