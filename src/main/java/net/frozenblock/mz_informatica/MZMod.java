@@ -18,8 +18,9 @@ public class MZMod {
     public static final String MOD_ID = "mz_informatica";
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    public MZMod(FMLJavaModLoadingContext context) {
-        IEventBus modEventBus = context.getModEventBus();
+    public MZMod() {
+        @SuppressWarnings("all")
+        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         MinecraftForge.EVENT_BUS.register(this);
     }
 
