@@ -61,6 +61,10 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 repositories {
     maven { url = "https://cursemaven.com" }
     maven { url = "https://api.modrinth.com/maven" }
+    maven {
+        name = 'tterrag maven'
+        url = 'https://maven.tterrag.com/'
+    }
 }
 
 dependencies {

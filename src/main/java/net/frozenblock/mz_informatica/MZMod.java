@@ -19,7 +19,7 @@ public class MZMod {
     //Variabile pubblica e static dell'id, così che può essere usata da tutte le parti
     public static final String MOD_ID = "mz_informatica";
     //Il logger, per inviare errori etc
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     //Costruttore della mod
     public MZMod() {
