@@ -4,7 +4,9 @@
   "package": "net.frozenblock.mz_informatica.mixin",
   "compatibilityLevel": "JAVA_17",
   "refmap": "mz_informatica.refmap.json",
-  "mixins": [],
+  "mixins": [
+    "FluidDrainingBehaviourMixin"
+  ],
   "client": [
     "PlayerTabOverlayMixin"
   ],

@@ -59,10 +59,15 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
+    maven { url = "https://cursemaven.com" }
+    maven { url = "https://api.modrinth.com/maven" }
 }
 
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+    implementation fg.deobf("curse.maven:gregtechceu-modern-890405:5753724")
+    implementation fg.deobf("curse.maven:create-328085:5689514")
+    //implementation fg.deobf("maven.modrinth:ad-astra:1.15.18")
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }
 
