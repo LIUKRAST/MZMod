@@ -19,15 +19,15 @@ import java.util.Objects;
 
 import static net.frozenblock.mz_informatica.FluidMap.*;
 
-@Mixin(value = FluidHelper.class, remap = false)
+//@Mixin(value = FluidHelper.class, remap = false)
 public class FluidHelperMixin {
 
-    @Inject(at = @At("RETURN"), method = "convertToStill", cancellable = true)
+    //@Inject(at = @At("RETURN"), method = "convertToStill", cancellable = true)
     private static void iConvertToStill(Fluid fluid, CallbackInfoReturnable<Fluid> cir) {
         cir.setReturnValue(get(convert(get(fluid))));
     }
 
-    @Inject(at = @At("RETURN"), method = "isSame(Lnet/minecraftforge/fluids/FluidStack;Lnet/minecraft/world/level/material/Fluid;)Z", cancellable = true)
+    //@Inject(at = @At("RETURN"), method = "isSame(Lnet/minecraftforge/fluids/FluidStack;Lnet/minecraft/world/level/material/Fluid;)Z", cancellable = true)
     private static void isSame1(FluidStack fluidStack, Fluid fluid, CallbackInfoReturnable<Boolean> cir) {
         if(!cir.getReturnValue()) {
             var f1 = get(fluid);
@@ -38,7 +38,7 @@ public class FluidHelperMixin {
         }
     }
 
-    @Inject(at = @At("RETURN"), method = "isSame(Lnet/minecraftforge/fluids/FluidStack;Lnet/minecraftforge/fluids/FluidStack;)Z", cancellable = true)
+    //@Inject(at = @At("RETURN"), method = "isSame(Lnet/minecraftforge/fluids/FluidStack;Lnet/minecraftforge/fluids/FluidStack;)Z", cancellable = true)
     private static void isSame2(FluidStack fluidStack, FluidStack fluidStack2, CallbackInfoReturnable<Boolean> cir) {
         if(!cir.getReturnValue()) {
             var f1 = get(fluidStack2.getFluid());
@@ -49,12 +49,12 @@ public class FluidHelperMixin {
         }
     }
 
-    @ModifyVariable(method = "deserializeFluidStack", at = @At("STORE"), ordinal = 0)
+    //@ModifyVariable(method = "deserializeFluidStack", at = @At("STORE"), ordinal = 0)
     private static ResourceLocation weDeserialize(ResourceLocation resourceLocation) {
         return new ResourceLocation(convert(resourceLocation.toString()));
     }
 
-    @Redirect(method = "serializeFluidStack", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/foundation/utility/RegisteredObjects;getKeyOrThrow(Lnet/minecraft/world/level/material/Fluid;)Lnet/minecraft/resources/ResourceLocation;"))
+    //@Redirect(method = "serializeFluidStack", at = @At(value = "INVOKE", target = "Lcom/simibubi/create/foundation/utility/RegisteredObjects;getKeyOrThrow(Lnet/minecraft/world/level/material/Fluid;)Lnet/minecraft/resources/ResourceLocation;"))
     private static ResourceLocation weSerialize(Fluid value) {
         final var original = RegisteredObjects.getKeyOrThrow(value).toString();
         return new ResourceLocation(convert(original));
