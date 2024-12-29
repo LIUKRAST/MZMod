@@ -5,7 +5,8 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "mz_informatica.refmap.json",
   "mixins": [
-    "FluidManipulationBehaviourMixin"
+    "FluidManipulationBehaviourMixin",
+    "ItemHandlerWrapperMixin"
   ],
   "client": [
     "PlayerTabOverlayMixin"
