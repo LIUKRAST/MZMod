@@ -5,7 +5,10 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "mz_informatica.refmap.json",
   "mixins": [
-    "FluidManipulationBehaviourMixin",
+    "DistillationTankBlockEntityMixin",
+    "FluidHelperMixin",
+    "FluidTankMixin",
+    "ServerboundCustomPayloadPacketMixin",
     "ItemHandlerWrapperMixin"
   ],
   "client": [

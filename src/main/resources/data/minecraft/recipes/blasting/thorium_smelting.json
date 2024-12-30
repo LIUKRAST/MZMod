@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:blasting",
+    "category": "misc",
+    "group": "thorium",
+    "ingredient": {
+      "item": "create_new_age:thorium_ore"
+    },
+    "result": "create_new_age:thorium",
+    "experience": 0.7,
+    "cookingtime": 100
+  }
+  

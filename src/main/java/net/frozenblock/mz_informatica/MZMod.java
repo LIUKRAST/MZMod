@@ -1,13 +1,14 @@
 package net.frozenblock.mz_informatica;
 
 import com.mojang.logging.LogUtils;
+import net.frozenblock.mz_informatica.command.ImpersonateCommand;
 import net.frozenblock.mz_informatica.registry.PaintingRegistry;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.ServerChatEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
-import net.minecraftforge.event.server.ServerLifecycleEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -32,7 +33,7 @@ public class MZMod {
         final var message = event.getMessage();
         event.setCanceled(true);
         final var msg = player.getDisplayName().copy().append(Component.literal(" : ")).append(message);
-        LOGGER.debug(msg.toString());
+        LOGGER.info(msg.getString());
         player.level().players().forEach(p -> p.sendSystemMessage(msg));
     }
 
@@ -46,4 +47,10 @@ public class MZMod {
             if(team != null) scoreboard.addPlayerToTeam(player.getScoreboardName(), team);
         }
     }
+
+    @SubscribeEvent
+    public void commandRegistryEvent(RegisterCommandsEvent event) {
+        ImpersonateCommand.register(event.getDispatcher());
+    }
+
 }

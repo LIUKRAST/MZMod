@@ -10,8 +10,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(ItemHandlerWrapper.class)
-
+@Mixin(value = ItemHandlerWrapper.class, remap = false)
 public class ItemHandlerWrapperMixin {
     @Shadow
     private IItemHandlerModifiable wrapped;

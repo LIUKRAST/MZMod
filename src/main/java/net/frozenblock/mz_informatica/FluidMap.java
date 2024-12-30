@@ -20,7 +20,7 @@ public class FluidMap {
     public static String convert(String id) {
         if(FluidMap.MAP.containsKey(id)) {
             final var replace = FluidMap.MAP.get(id);
-            MZMod.LOGGER.info("Converting fluid {} into {}", id, replace);
+            MZMod.LOGGER.debug("Converting fluid {} into {}", id, replace);
             return replace;
         }
         return id;
